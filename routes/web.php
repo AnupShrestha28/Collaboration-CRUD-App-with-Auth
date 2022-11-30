@@ -14,7 +14,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('dashboard', [HomeController::class, 'dashboard']);
+Route::get('dashboard', [HomeController::class, 'dashboard'])->middleware(['auth']);
 
 Route::get('add-student', [HomeController::class, 'addStudent']);
 
@@ -26,5 +26,6 @@ Route::post('update-student', [HomeController::class, 'updateStudent']);
 
 Route::get('delete-student/{id}', [HomeController::class, 'deleteStudent']);
 
+Route::get('logout', [HomeController::class, 'logout'])->name('logout');
 
 
