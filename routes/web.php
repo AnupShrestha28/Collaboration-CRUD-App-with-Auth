@@ -15,3 +15,11 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('dashboard', [HomeController::class, 'dashboard']);
+
+
+Route::get('add-student', [HomeController::class, 'addStudent']);
+
+Route::get('edit-student', [HomeController::class, 'editStudent']);
+
+
+
