@@ -15,3 +15,10 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('dashboard', [HomeController::class, 'dashboard']);
+
+
+Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::get('/signup', [HomeController::class, 'register'])->name('signup');
+
+Route::post('/login', [AuthController::class, 'loginuser'])->name('loginuser');
+Route::post('/signup', [AuthController::class, 'signupuser'])->name('registeruser');

@@ -7,7 +7,18 @@ use  App\Models\Home;
 
 class HomeController extends Controller
 {
-    public function dashboard(){
+    public function dashboard()
+    {
         return view('dashboard');
+    }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function register()
+    {
+        return view('register');
     }
 }
