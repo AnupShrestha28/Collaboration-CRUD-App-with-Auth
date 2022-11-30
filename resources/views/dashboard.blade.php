@@ -20,7 +20,7 @@
                 <a href="" class="btn btn-secondary">Register</a>
             </div>
 
-            <form action="" method="get"><br>
+            <form action="{{url('logout')}}" method="get"><br>
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
 
