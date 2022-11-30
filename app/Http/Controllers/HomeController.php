@@ -60,6 +60,21 @@ class HomeController extends Controller
             'address' => 'required',
         ]);
 
-        dd($request->all());
+        // dd($request->all());
+
+        $id = $request->id;
+        $name = $request->name;
+        $email = $request->email;
+        $phone = $request->phone;
+        $address = $request->address;
+
+        Home::where('id', '=', $id)->update([
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'address' => $address
+        ]);
+
+        return redirect('/dashboard')->with('success', 'Updated Successfully');
     }
 }
