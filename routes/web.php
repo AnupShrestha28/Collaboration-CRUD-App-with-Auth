@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -26,6 +27,12 @@ Route::post('update-student', [HomeController::class, 'updateStudent']);
 
 Route::get('delete-student/{id}', [HomeController::class, 'deleteStudent']);
 
-Route::get('logout', [HomeController::class, 'logout'])->name('logout');
+Route::get('logout', [AuthController::class, 'logout']);
 
 
+
+Route::get('/login', [HomeController::class, 'login']);
+Route::get('signup', [HomeController::class, 'signup']);
+
+Route::post('login', [AuthController::class, 'loginuser'])->name('loginuser');
+Route::post('signup', [AuthController::class, 'registeruser'])->name('signupuser');

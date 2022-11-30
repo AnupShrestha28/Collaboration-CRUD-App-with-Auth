@@ -7,17 +7,20 @@ use  App\Models\Home;
 
 class HomeController extends Controller
 {
-    public function dashboard(){
+    public function dashboard()
+    {
         $data = Home::all();
         return view('dashboard', compact('data'));
     }
 
 
-    public function addStudent(){
+    public function addStudent()
+    {
         return view('add-student');
     }
 
-    public function saveStudent(Request $request){
+    public function saveStudent(Request $request)
+    {
         // validating the form
         $request->validate([
             'name' => 'required',
@@ -42,16 +45,17 @@ class HomeController extends Controller
         $home->save();
 
         return redirect('/dashboard')->with('success', 'New Student added successfully');
-
     }
 
-    public function editStudent($id){
+    public function editStudent($id)
+    {
         $data = Home::where('id', '=', $id)->first();
 
         return view('edit-student', compact('data'));
     }
 
-    public function updateStudent(Request $request){
+    public function updateStudent(Request $request)
+    {
         // validating the form
         $request->validate([
             'name' => 'required',
@@ -78,9 +82,20 @@ class HomeController extends Controller
         return redirect('/dashboard')->with('success', 'Updated Successfully');
     }
 
-    public function deleteStudent($id){
+    public function deleteStudent($id)
+    {
         Home::where('id', '=', $id)->delete();
 
         return redirect('/dashboard')->with('success', 'Deleted Successfully');
+    }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function signup()
+    {
+        return view('register');
     }
 }
