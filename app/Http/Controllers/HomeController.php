@@ -45,7 +45,21 @@ class HomeController extends Controller
 
     }
 
-    public function editStudent(){
-        return view('edit-student');
+    public function editStudent($id){
+        $data = Home::where('id', '=', $id)->first();
+
+        return view('edit-student', compact('data'));
+    }
+
+    public function updateStudent(Request $request){
+        // validating the form
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'address' => 'required',
+        ]);
+
+        dd($request->all());
     }
 }

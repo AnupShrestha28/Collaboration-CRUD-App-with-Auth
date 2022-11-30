@@ -20,7 +20,9 @@ Route::get('add-student', [HomeController::class, 'addStudent']);
 
 Route::post('save-student', [HomeController::class, 'saveStudent']);
 
-Route::get('edit-student', [HomeController::class, 'editStudent']);
+Route::get('edit-student/{id}', [HomeController::class, 'editStudent']);
+
+Route::post('update-student', [HomeController::class, 'updateStudent']);
 
 
 

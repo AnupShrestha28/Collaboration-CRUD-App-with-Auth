@@ -18,23 +18,42 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter name">
-                    
+                    <input type="text" name="name" class="form-control" placeholder="Enter name" value="{{old('name')}}">
+                    @error('name')
+                        <div class="alert alert-danger" role="alert">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" placeholder="Enter email">
+                    <input type="email" name="email" class="form-control" placeholder="Enter email" value="{{old('email')}}">
+                    @error('email')
+                        <div class="alert alert-danger" role="alert">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Phone</label>
-                    <input type="phone" name="phone" class="form-control" placeholder="Enter phone">
+                    <input type="phone" name="phone" class="form-control" placeholder="Enter phone" value="{{old('phone')}}">
+                    @error('phone')
+                        <div class="alert alert-danger" role="alert">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Address</label>
-                    <textarea name="address" class="form-control" placeholder="Enter Address"></textarea>
+                    <textarea name="address" class="form-control" placeholder="Enter Address">{{old('address')}}</textarea>
+                    @error('address')
+                        <div class="alert alert-danger" role="alert">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
 
                 <br>

@@ -14,26 +14,47 @@
                 <h2>Edit Student</h2>
             </div>
 
-            <form action="" method="post">
+            <form action="{{url('update-student')}}" method="post">
                 @csrf
+                <input type="hidden" name="id" value="{{$data->id}}">
                 <div class="mb-3">
                     <label class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter name">
+                    <input type="text" name="name" class="form-control" placeholder="Enter name" value="{{$data->name}}">
+                    @error('name')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" placeholder="Enter email">
+                    <input type="email" name="email" class="form-control" placeholder="Enter email" value="{{$data->email}}">
+                    @error('email')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Phone</label>
-                    <input type="phone" name="phone" class="form-control" placeholder="Enter phone">
+                    <input type="phone" name="phone" class="form-control" placeholder="Enter phone" value="{{$data->phone}}">
+                    @error('phone')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Address</label>
-                    <textarea name="address" class="form-control" placeholder="Enter Address"></textarea>
+                    <textarea name="address" class="form-control" placeholder="Enter Address">{{$data->address}}</textarea>
+                    @error('address')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
                 </div>
 
                 <br>
