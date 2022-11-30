@@ -3,7 +3,7 @@
 
 <div class="container mt-3 container-title" style="width: 600px" >
     <div class="title mb-2">
-        <img src="{{ asset("build/assets/images/windows10.png")}}" class="icon" alt="IconImage"> <br>
+        <img src="{{ asset('images/windows10.png')}}" class="icon" alt="IconImage"> <br>
         <span class="titlename">Register</span>
       </div>
 <form action="{{ route('signupuser') }}" method="post">

@@ -3,7 +3,7 @@
 
 <div class="container container-title mt-5" style="width: 600px">
   <div class="title mb-2">
-    <img src="{{ asset("build/assets/images/windows10.png")}}" class="icon" alt="IconImage"> <br>
+    <img src="{{ asset('images/windows10.png')}}" class="icon" alt="IconImage"> <br>
     <span class="titlename">Login</span>
   </div>
 
