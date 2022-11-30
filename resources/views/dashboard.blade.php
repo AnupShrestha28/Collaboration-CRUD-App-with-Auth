@@ -15,10 +15,16 @@
                 <h3>Welcome</h3>
             </div>
 
+            @auth
+                <a href="{{url('login')}}" class="p-2 nav-link">{{auth()->user()->name}}</a>
+            @endauth
+
+            @guest
             <div>
-                <a href="" class="btn btn-primary">Login</a>
-                <a href="" class="btn btn-secondary">Register</a>
+                <a href="{{url('login')}}" class="btn btn-primary">Login</a>
+                <a href="{url('register')}" class="btn btn-secondary">Register</a>
             </div>
+            @endguest
 
             <form action="{{url('logout')}}" method="get"><br>
                 <button type="submit" class="btn btn-danger">Logout</button>
