@@ -20,4 +20,10 @@ class HomeController extends Controller
     {
         return view('register');
     }
+
+    public function deleteStudent($id){
+        Home::where('id', '=', $id)->delete();
+
+        return redirect('/dashboard')->with('success', 'Deleted Successfully');
+    }
 }
