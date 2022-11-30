@@ -30,6 +30,12 @@
                         <h2 style="text-align: center">Student List</h2>
                     </div>
 
+                    @if(Session::has('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+
                     <div>
                         <a href="{{url('add-student')}}" class="btn btn-primary">Add Student</a>
                     </div>
@@ -47,14 +53,20 @@
                         </thead>
 
                         <tbody>
+                            @php
+                                $i = 1;
+                            @endphp
+
+                            @foreach($data as $student)
                             <tr>
-                                <td>1</td>
-                                <td>Anoop Shrestha</td>
-                                <td>anoop@gmail.com</td>
-                                <td>9817173790</td>
-                                <td>Naxal</td>
+                                <td>{{$i++}}</td>
+                                <td>{{$student->name}}</td>
+                                <td>{{$student->email}}</td>
+                                <td>{{$student->phone}}</td>
+                                <td>{{$student->address}}</td>
                                 <td><a href="" class="btn btn-primary">Edit</a> <a href="" class="btn btn-danger">Delete</a></td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

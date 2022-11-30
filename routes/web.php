@@ -16,8 +16,9 @@ use App\Http\Controllers\HomeController;
 
 Route::get('dashboard', [HomeController::class, 'dashboard']);
 
-
 Route::get('add-student', [HomeController::class, 'addStudent']);
+
+Route::post('save-student', [HomeController::class, 'saveStudent']);
 
 Route::get('edit-student', [HomeController::class, 'editStudent']);
 

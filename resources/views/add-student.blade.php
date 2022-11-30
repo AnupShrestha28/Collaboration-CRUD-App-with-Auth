@@ -14,11 +14,12 @@
                 <h2>Add Student</h2>
             </div>
 
-            <form action="" method="post">
+            <form action="{{url('save-student')}}" method="post">
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Name</label>
                     <input type="text" name="name" class="form-control" placeholder="Enter name">
+                    
                 </div>
 
                 <div class="mb-3">
