@@ -24,5 +24,7 @@ Route::get('edit-student/{id}', [HomeController::class, 'editStudent']);
 
 Route::post('update-student', [HomeController::class, 'updateStudent']);
 
+Route::get('delete-student/{id}', [HomeController::class, 'deleteStudent']);
+
 
 

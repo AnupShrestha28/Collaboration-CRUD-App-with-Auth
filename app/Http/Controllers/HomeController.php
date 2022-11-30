@@ -77,4 +77,10 @@ class HomeController extends Controller
 
         return redirect('/dashboard')->with('success', 'Updated Successfully');
     }
+
+    public function deleteStudent($id){
+        Home::where('id', '=', $id)->delete();
+
+        return redirect('/dashboard')->with('success', 'Deleted Successfully');
+    }
 }

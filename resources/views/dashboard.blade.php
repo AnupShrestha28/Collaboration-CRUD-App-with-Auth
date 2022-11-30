@@ -64,7 +64,7 @@
                                 <td>{{$student->email}}</td>
                                 <td>{{$student->phone}}</td>
                                 <td>{{$student->address}}</td>
-                                <td><a href="{{url('edit-student/'.$student->id)}}" class="btn btn-primary">Edit</a> <a href="" class="btn btn-danger">Delete</a></td>
+                                <td><a href="{{url('edit-student/'.$student->id)}}" class="btn btn-primary">Edit</a> <a href="{{url('delete-student/'.$student->id)}}" class="btn btn-danger">Delete</a></td>
                             </tr>
                             @endforeach
                         </tbody>
